@@ -13,7 +13,7 @@ public class Game {
 
         int guess = 0, aux = 0, comp = 0;
 
-        System.out.println("Que os jogos comecem!");
+        System.out.println("Que os jogos comecem!\n");
 
         for (int i = 0; i < players.length; i++) {
 
@@ -29,14 +29,14 @@ public class Game {
                 comp = validate[i] - guess;
 
                 if (validate[i] == guess) {
-                    System.out.println("Voce acertou!");
+                    System.out.println("Voce acertou!\n");
                     aux++;
                     break;
-                } else if (Math.abs(comp)<2) {
+                } else if (Math.abs(comp) < 2) {
                     System.out.println("Esta quente!");
-                } else if (Math.abs(comp)<3) {
+                } else if (Math.abs(comp) < 3) {
                     System.out.println("Esta esquentando!");
-                } else if (Math.abs(comp)<4) {
+                } else if (Math.abs(comp) < 4) {
                     System.out.println("Esta frio!");
                 } else {
                     System.out.println("Esta congelado!");
@@ -51,17 +51,22 @@ public class Game {
 
         }
 
-        aux = 0;
+        aux = 5;
         int aux2 = 0;
 
         for (int i = 0; i < win.length; i++) {
-            if (win[i] > aux) {
+
+            System.out.println("1 - " + aux);
+
+            if (win[i] < aux) {
                 aux = win[i];
+                System.out.println("2 - " + aux);
+                aux2 = i;
             }
-            aux2 = i;
+            
         }
 
-        System.out.println("O vencedor eh o jogador " + (aux2+1) + " com " + win[aux2] + " tentativas!");
+        System.out.println("O vencedor eh o jogador " + (aux2 + 1) + " com " + win[aux2] + " tentativas!");
 
     }
 

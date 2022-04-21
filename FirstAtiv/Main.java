@@ -4,7 +4,7 @@ import static FirstAtiv.Lista.*;
 import static FirstAtiv.Quant.*;
 import static FirstAtiv.Player.*;
 import static FirstAtiv.Game.*;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -13,41 +13,39 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         int[] v = new int[100];
-        int rep=0;
-        
-        do{
-        int num_player_aux = 0, num_player;
+        int rep = 0;
 
-        // Quantos n jogadores terao
+        do {
+            int num_player_aux = 0, num_player;
 
-        num_player = num(num_player_aux);
+            // Quantos n jogadores terao
 
-        int[] players = new int[num_player];
-        int[] validate = new int[num_player];
+            num_player = num(num_player_aux);
 
-        // criar e preencher lista com 100 numeros inteiros aleatorios
-        list(v);
+            int[] players = new int[num_player];
+            int[] validate = new int[num_player];
 
-        //criacao do player
-        players(num_player, players, v, validate);
+            // criar e preencher lista com 100 numeros inteiros aleatorios
+            list(v);
 
-        /*teste das matrizes  
-        System.out.println(Arrays.toString(players)); (numero que o jogador quis acertar)
-        System.out.println(Arrays.toString(validate)); (numero de repeticoes de kda numero)
-        */
+            // criacao do player
+            players(num_player, players, v, validate);
 
-        //O jogo eh iniciado
+            
+             // teste das matrizes
+             //System.out.println(Arrays.toString(players)); //(numero que o jogador quis acertar)
+             //System.out.println(Arrays.toString(validate)); //(numero de repeticoes de kda numero)
+             
 
-        game(players, v, validate);
+            // O jogo eh iniciado
+            game(players, v, validate);
 
-        // printar vencedor
+            // colocar escolha de começar outro jogo ou encerrar o sistema
 
-        // colocar escolha de começar outro jogo ou encerrar o sistema
+            System.out.println("Caso queira jogar denovo:(0)\nCaso queira encerrar o jogo:(1)");
+            rep = scan.nextInt();
 
-        System.out.println("Caso queira jogar denovo:(0)\nCaso queira encerrar o jogo:(1)");
-        rep = scan.nextInt();
-
-       }while(rep==0);
-}
+        } while (rep == 0);
+    }
 
 }

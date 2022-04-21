@@ -7,10 +7,9 @@ public class Verify {
         int Index_init = 0;
         int Index_last = v.length - 1;
 
-        
         while (Index_init <= Index_last) {
             int Index_mod = (Index_init + Index_last) / 2;
-            
+
             if (v[Index_mod] == guess) {
                 return Index_mod;
             }
