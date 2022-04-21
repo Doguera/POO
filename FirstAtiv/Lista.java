@@ -16,9 +16,9 @@ public class Lista {
 
         Arrays.sort(v);
 
-        // confirmar se a lista foi feita corretamente
+        /* confirmar se a lista foi feita corretamente
         System.out.println(Arrays.toString(v));
-
+        */
     }
 
 }

@@ -14,10 +14,11 @@ public class Player {
 
             valid = -1;
             aux = 0;
+            System.out.println("Jogador " + (i + 1)
+                    + " deve escolher um numero de 0-100(lembrando que ele precisara estar na lista): ");
+
             while (valid == -1) {
 
-                System.out.println("Jogador " + (i + 1)
-                        + " deve escolher um numero de 0-100(lembrando que ele precisara estar na lista): ");
                 guess = scan.nextInt();
 
                 valid = verify(v, guess);
@@ -28,20 +29,22 @@ public class Player {
 
                 if (v[index] == guess) {
                     aux++;
-                }else break;
+                } else
+                    break;
 
             }
 
-            for (int index = valid-1; index < v.length; index--) {
+            for (int index = valid - 1; index < v.length; index--) {
 
                 if (v[index] == guess) {
                     aux++;
-                }else break;
+                } else
+                    break;
 
             }
 
             validate[i] = aux;
-            
+
             System.out.println("O numero " + guess + " foi escolhido com êxito!\n");
 
             players[i] = guess;

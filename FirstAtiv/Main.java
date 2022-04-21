@@ -5,12 +5,17 @@ import static FirstAtiv.Quant.*;
 import static FirstAtiv.Player.*;
 import static FirstAtiv.Game.*;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        Scanner scan = new Scanner(System.in);
         int[] v = new int[100];
+        int rep=0;
+        
+        do{
         int num_player_aux = 0, num_player;
 
         // Quantos n jogadores terao
@@ -23,44 +28,26 @@ public class Main {
         // criar e preencher lista com 100 numeros inteiros aleatorios
         list(v);
 
-        /*
-         * criar n jogadores{
-         * 
-         * usuario n digita um numero inteiro
-         * 
-         * se (1) é vdd, encerra o processo e vai pro prox jogador{
-         * 
-         * (1)numero inteiro digitado eh verificado se esta na lista ou nao
-         * }
-         * 
-         * }
-         */
-
+        //criacao do player
         players(num_player, players, v, validate);
 
-        System.out.println(Arrays.toString(players));
-        System.out.println(Arrays.toString(validate));
+        /*teste das matrizes  
+        System.out.println(Arrays.toString(players)); (numero que o jogador quis acertar)
+        System.out.println(Arrays.toString(validate)); (numero de repeticoes de kda numero)
+        */
 
-        /*
-         * {
-         * 
-         * //printar "Que comecem os jogos"
-         * 
-         * Repetir 5 vezes por jogador{
-         * calcular quantas vezes o numero foi achado na lista
-         * perguntar para o usuario quant
-         * Dependendo da amplitude entre o imput do usuario e o numero achado na lista
-         * Nessa ordem, deve printar "Esta Congelado", "Esta frio", "Esta esquentando",
-         * "Esta quente"
-         * }
-         * }
-         */
+        //O jogo eh iniciado
 
         game(players, v, validate);
 
         // printar vencedor
 
         // colocar escolha de começar outro jogo ou encerrar o sistema
-    }
+
+        System.out.println("Caso queira jogar denovo:(0)\nCaso queira encerrar o jogo:(1)");
+        rep = scan.nextInt();
+
+       }while(rep==0);
+}
 
 }
