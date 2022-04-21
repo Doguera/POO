@@ -56,14 +56,11 @@ public class Game {
 
         for (int i = 0; i < win.length; i++) {
 
-            System.out.println("1 - " + aux);
-
             if (win[i] < aux) {
                 aux = win[i];
-                System.out.println("2 - " + aux);
                 aux2 = i;
             }
-            
+
         }
 
         System.out.println("O vencedor eh o jogador " + (aux2 + 1) + " com " + win[aux2] + " tentativas!");
